@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'Css/login.css' %}">
+	<script type="text/javascript">
+		//var doesntexist = {{checked}};
+		if({{checked}} == 1)
+			alert('User does not exist on the database! Please sign up.')
+	</script>
+</head>
+
+<body>
+	<div class = "wrapper">
+		<br><br><br><br><br>
+		<h1 id = "check">Welcome to J.A.R.V.I.S. !</h1>
+		<h2 style="text-align: center;">{{template_title}}</h2>
+		<form class="form" method='POST' action=''> {% csrf_token %}
+			<input type="text" placeholder="Username" name="un" readonly onfocus = "this.removeAttribute('readonly');" required >
+			<input type="password" placeholder="Password" name= "pass" required=>
+			<input type = 'submit' value = 'Log in'> 
+		</form>
+		<p id = "signup">(Or sign up <a href = "../signup" id="signuplink">here</a>)</p>
+
+	</div>
+
+</body>
+</html>

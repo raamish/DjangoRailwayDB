@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <title>J.A.R.V.I.S.</title>
+       <link rel="stylesheet" type="text/css" href="{% static 'Css/cancel.css' %}">
+    
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul >
+            <li ><a style =" color:white" href="../history">History</a></li>
+            <li ><a style =" color:white" href="../enqj">Journey</a></li>
+            <li ><a style =" color:white" href="../enqt">Trains</a></li>
+            <li ><a style =" color:white" href="../dashboard">Dashboard</a></li>
+            <li ><a style =" color:white" href="../booking">Book</a></li>
+            <li id = "current"><a  href="#">Cancel</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+      <div class="wrapper">
+        <h1 style="font-size: 300%;">Cancel Tickets</h1>
+        {% if template_title %}
+        <h2>{{ template_title }}</h2>
+        {% else %}
+       <hr style="width: 0px;">
+       <form action='../cancel/' class="form-signin" method="POST" id="form1">{% csrf_token %}
+       <table style="width: 100%; text-align: center; font-size: 140%; margin-left: 20px;"> 
+       <tr>
+        <td>PNR</td>
+        <td>Train No.</td>
+        <td>DoJ</td>
+        <td>Start ID</td>
+        <td>End ID</td>
+        <td>Seats</td>
+        <td>Cost</td> 
+        </tr>
+      
+       {% for ticket in tickets %}
+        <tr>
+        <td>{{ ticket.0 }}</td>
+        <td>{{ ticket.1 }}</td>
+        <td>{{ ticket.3 }}</td>
+        <td>{{ ticket.4 }}</td>
+        <td>{{ ticket.5 }}</td>
+        <td>{{ ticket.6 }}</td>
+        <td>{{ ticket.7 }}</td>  
+        <td><button style="font-size:60%; padding: 7px 12px;" type="submit" form="form1" name="submit" class="btn btn-sm btn-primary" value="{{ forloop.counter }}">Cancel</button></td>
+        </tr>
+       {% endfor %}
+      </table>
+      </form>
+        {%endif%}
+      </div>
+     </div>
+    </div>
+  </body>
+</html>

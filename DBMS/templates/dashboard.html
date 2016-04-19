@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>J.A.R.V.I.S.</title>
+	<!--<script type="text/javascript" src = "Scipts/Dashboard.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Css/Dashboard.css' %}"></link>
+	<script src="{% static 'Scripts/jquery-2.2.1.min.js' %}"></script>
+	<script type = "text/javascript">
+		localStorage.setItem("user", "{{name}}");
+	</script>
+</head>
+
+<body>
+<div class = "wrapper">
+	<p class = "hd" id = "uhd">Hello, {{name}}!</p>
+	<p class = "hd" id = "lhd">What would you like to do today?</p>
+
+	<div id = "links">
+		<!-- <div id = "l1" onclick = "location.href = 'history?'+'user='+localStorage.getItem('user')">  -->
+		<div id = "l1" onclick = "location.href = '../history'">
+			<span>Check Booking History</span>
+		</div>
+		<div id = "l2" onclick = "location.href = '../enqj'">
+			<p>Trains Between Staions</p>
+		</div>
+		<div id = "l3" onclick = "location.href = '../enqt'"> 
+			<p>Train Enquiry</p>
+		</div>
+		
+		<div id = "l4" onclick = "location.href = '../booking'">
+			<p>Book Tickets</p>
+		</div>
+		<div id = "l5" onclick = "location.href = '../cancel'">
+			<p>Cancel Tickets</p>
+		</div>
+<!-- +'user='+localStorage.getItem('user') -->
+
+	</div>
+
+	<div id = "logout">
+		<div id = "button" onclick = "location.href = '../login'">
+			<p>Log Out</p>
+		</div>
+	
+	</div>
+</div>
+
+</body>
+</html>

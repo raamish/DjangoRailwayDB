@@ -1,0 +1,152 @@
+/*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);*/
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url('./fonts/source-sans-pro-v9-latin-200.eot'); /* IE9 Compat Modes */
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'),
+       url('./fonts/source-sans-pro-v9-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/source-sans-pro-v9-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/source-sans-pro-v9-latin-200.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/source-sans-pro-v9-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/source-sans-pro-v9-latin-200.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+}
+/* source-sans-pro-300 - latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./fonts/source-sans-pro-v9-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'),
+       url('./fonts/source-sans-pro-v9-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/source-sans-pro-v9-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/source-sans-pro-v9-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/source-sans-pro-v9-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/source-sans-pro-v9-latin-300.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+}
+/* source-sans-pro-regular - latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/source-sans-pro-v9-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'),
+       url('./fonts/source-sans-pro-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/source-sans-pro-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/source-sans-pro-v9-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/source-sans-pro-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/source-sans-pro-v9-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+}
+body ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+}
+body :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  opacity: 1;
+  font-weight: 300;
+}
+body ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  opacity: 1;
+  font-weight: 300;
+}
+body :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+}
+
+.wrapper
+{
+    left: 0;
+    top: 0;
+    width: 100%;
+  	height: 100%;
+  	position: absolute;
+    overflow: hidden;
+    background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+}
+
+.hd
+{
+  margin-top: 12px;
+  text-align: center;
+}
+
+#uhd
+{
+  font-size: 40px;
+}
+
+#lhd
+{
+  font-size: 20px;
+  margin-bottom:60px;
+}
+
+#l1, #l2, #l3,#l4, #l5
+{
+  padding: 20px;
+  position: center;
+  text-align: center;
+  border: 1px solid #fff;
+  margin:30px;
+  margin-left: 500px;
+  margin-right: 500px;
+  border-radius: 6px;
+  color:white;
+  -webkit-transition: background-color 0.5s;
+  -webkit-transition: color 0.5s;
+}
+
+#l1:hover, #l2:hover, #l3:hover, #l4:hover, #l5:hover
+{
+  cursor: pointer;
+  background-color: white;
+  color: #50a3a2;
+}
+
+#logout
+{
+  padding: 10px;
+  position: center;
+  text-align: center;
+  border: 1px solid #fff;
+  margin:15px;
+  margin-left: 600px;
+  margin-right: 600px;
+  border-radius: 6px;
+  color:black;
+  -webkit-transition: background-color 0.5s;
+  -webkit-transition: color 0.5s;
+}
+
+#logout:hover
+{
+-webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  cursor: pointer;
+  background-color: #f5f7f9;
+  color: #50a3a2;
+  font-color : #000000;
+}

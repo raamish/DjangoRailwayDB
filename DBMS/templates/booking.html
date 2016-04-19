@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <title>J.A.R.V.I.S.</title>
+
+   <link rel="stylesheet" type="text/css" href="{% static 'Css/booking.css' %}">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul >
+            <li ><a style =" color:white" href="../history">History</a></li>
+            <li ><a style =" color:white" href="../enqj">Journey</a></li>
+            <li ><a style =" color:white" href="../enqt">Trains</a></li>
+            <li ><a style =" color:white" href="../dashboard">Dashboard</a></li>
+            <li id = "current"><a href="#">Book</a></li>
+            <li ><a style =" color:white" href="../cancel">Cancel</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="wrapper">
+        {% if trains %}
+        <p>{{ name }}</p>
+          {% for train in trains %}
+            <p>{{ train.1 }}</p> 
+          {% endfor %}
+        {% else %}
+        <h1 style="font-size: 300%;">Book your Tickets</h1>  
+        <form action='../booking/' class="form-signin" method="POST" id="form1">{% csrf_token %}
+        <input type="name" name="inputStart" id="inputStart" class="form-control" placeholder="Source" required>
+        <input type="name" name="inputEnd" id="inputEnd" class="form-control" placeholder="Destination" required>
+        <input type="name" name="inputSeats" id="inputSeats" class="form-control" placeholder="Number of Seats" required>
+        <input type="date" name="inputDate" id="inputDate" class="form-control" placeholder="Date of Journey" required>
+        <!--{% if err %}
+          <p style="color: red; font-size:110%;">{{ err }}</p>
+        {% endif %}-->
+        <hr style="border-width: 0px;">
+        <button type="submit" form="form1" id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Search Trains</button> 
+        </form>
+        {% endif %}
+      </div>
+     </div>
+  </body>
+</html>

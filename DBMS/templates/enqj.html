@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <title>Enquiry</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/enqj.css' %}"> 
+  
+  </head>
+ 
+  <body>
+  <div class="container">
+    <div class="header">
+        <nav>
+          <ul >
+            <li ><a style =" color:white" href="../history">History</a></li>
+            <li id = "current"><a href="#">Journey</a></li>
+            <li ><a style =" color:white" href="../enqt">Trains</a></li>
+            <li ><a style =" color:white" href="../dashboard">Dashboard</a></li>
+            <li ><a style =" color:white" href="../booking">Book</a></li>
+            <li ><a style =" color:white" href="../cancel">Cancel</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="wrapper" style="font-size:200%;">
+        {% if trains %}
+        <table style="width: 100%; text-align: center; font-size: 90%; margin-left: 20px;"> 
+        <p style="font-size: 100%">Trains Found :</p>
+       <tr>
+        <td>Train No.</td>
+        <td>Name</td>
+        <td>Arrival at {{start}} </td>
+        <td>Arrival at {{end}}</td>
+        </tr>
+        <!-- <p>{{ name }}</p> -->
+          
+          {% for item1,item2,item3 in finarray %}
+          <tr>
+            <td>{{ item1.0 }}</td>
+            <td>{{ item1.1 }}</td>
+            <td>{{ item2 }}</td>
+            <td>{{ item3 }}</td>
+           </tr> 
+          {% endfor %}
+          </table>
+        {% else %}
+        <h1 style="font-size: 150%;">Enter Journey End-Points</h1>  
+        <form action='' class="form-signin" method="POST" id="form1">{% csrf_token %}
+       <!--  <label for="inputStart" class="sr-only">Boarding at..</label> -->
+        <input type="name" name="inputStart" id="inputStart" class="form-control" placeholder="Boarding at.." required>
+        <label for="inputEnd" class="sr-only"></label>
+        <input type="name" name="inputEnd" id="inputEnd" class="form-control" placeholder="Destination" required>
+        <!--{% if err %}
+          <p style="color: red; font-size:110%;">{{ err }}</p>
+        {% endif %}-->
+        <hr style="border-width: 0px;">
+        <button type="submit" form="form1" id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Search Trains</button> 
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

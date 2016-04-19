@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <title>J.A.R.V.I.S.</title> 
+   
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/booktrain.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul >
+            <li ><a style =" color:white" href="../history">History</a></li>
+            <li ><a style =" color:white" href="../enqj">Journey</a></li>
+            <li ><a style =" color:white" href="../enqt">Trains</a></li>
+            <li ><a style =" color:white" href="../dashboard">Dashboard</a></li>
+            <li id = "current"><a href="#">Book</a></li>
+            <li ><a style =" color:white" href="../cancel">Cancel</a></li>
+          </ul>
+        </nav>
+      </div>		
+ 		<div>
+        <div class="jumbotron">
+        <h1 style="font-size: 300%; text-align: center;">Book your Tickets</h1>  
+        
+        <form action='../booktrain/' class="form-signin" method="POST" id="form1">{% csrf_token %}
+        <table style="width: 100%; text-align: left; font-size: 120%; margin-left: 0px;">
+        {% for final in finals %}
+        	<p style="text-align: left;padding: 10px 0px 10px 100px; font-size: 120%"><button style="font-size:70%; padding: 10px 12px; text-align: center" type="submit" form="form1" name="submit" class="btn btn-sm btn-primary" value="{{ forloop.counter }}">Book Ticket</button> {{ final.0 }} {{final.1}} </p>
+        {% endfor %} 
+        </form>
+      </div>
+     </div>
+  </body>
+</html>
